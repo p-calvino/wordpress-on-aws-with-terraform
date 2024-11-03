@@ -11,9 +11,13 @@ locals {
   app_subnet_name       = [for i, az in local.availability_zones : "subnet-wordpress-app-${az}"]
   current_account       = data.aws_caller_identity.current.account_id
   current_region        = data.aws_region.current.name
+  db_password           = aws_secretsmanager_secret_version.wordpress_db.secret_string
+  efs_endpoint          = aws_efs_file_system.wordpress_efs.dns_name
+  db_endpoint           = aws_db_instance.wordpress_db.address
+  current_environment   = "dev"
+  vpc_name              = "vpc-wordpress"
 
   #   resource_suffix             = join("-", [local.current_region, local.env_suffix, local.account_name])
-  vpc_name = "vpc-wordpress"
   #   default_network_acl_name    = "nacl-${local.resource_suffix}"
   #   default_route_table_name    = "rtb-default-${local.resource_suffix}"
   #   public_route_table_name     = "rtb-public-${local.resource_suffix}"

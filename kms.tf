@@ -61,13 +61,11 @@ EOF
   }
 }
 
-# Alias per la chiave RDS
 resource "aws_kms_alias" "rds_kms_alias" {
   name          = "alias/rds-kms-key"
   target_key_id = aws_kms_key.rds_kms_key.id
 }
 
-# Definisci una chiave KMS per EFS
 resource "aws_kms_key" "efs_kms_key" {
   description             = "KMS key per la crittografia di EFS"
   deletion_window_in_days = 30
@@ -129,7 +127,6 @@ EOF
   }
 }
 
-# Alias per la chiave EFS
 resource "aws_kms_alias" "efs_kms_alias" {
   name          = "alias/efs-kms-key"
   target_key_id = aws_kms_key.efs_kms_key.id
