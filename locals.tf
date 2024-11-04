@@ -5,9 +5,9 @@ locals {
   app_subnets      = [for i, az in local.availability_zones : cidrsubnet(module.subnets_cidrs.network_cidr_blocks["app"], 1, i)]
   database_subnets = [for i, az in local.availability_zones : cidrsubnet(module.subnets_cidrs.network_cidr_blocks["database"], 1, i)]
 
-  public_subnets_name   = [for i, az in local.availability_zones : "wordpress-public-subnet-${az}"]
-  database_subnets_name = [for i, az in local.availability_zones : "wordpress-db-subnet-${az}"]
-  app_subnet_name       = [for i, az in local.availability_zones : "wordpress-app-subnet-${az}"]
+  public_subnets_name   = [for az in local.availability_zones : "wordpress-public-subnet-${az}"]
+  database_subnets_name = [for az in local.availability_zones : "wordpress-db-subnet-${az}"]
+  app_subnet_name       = [for az in local.availability_zones : "wordpress-app-subnet-${az}"]
 
   current_account = data.aws_caller_identity.current.account_id
   current_region  = data.aws_region.current.name

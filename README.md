@@ -26,29 +26,29 @@ L'infrastruttura sfrutta un load balancer (ALB) per distribuire il traffico HTTP
 
 ## Configurazione e Avvio
 
-1. **Clona il repository**:
+1. **Clona il repository**:  
    ```bash
    git clone <URL_REPOSITORY>
    cd <NOME_CARTELLA>
    ```
 
-2. **Configura la versione di WordPress**:
+2. **Configura la versione di WordPress**:  
    Normalmente viene installata l'ultima versione di Wordpress.
    Nel file `variables.tf`, si può specificare la versione di WordPress da installare modificando la variabile `wordpress_version`. 
    Se si desidera una versione diversa dall'ultima, si può specificare `wordpress-6.5`, ad esempio.
 
-3. **Inizializza Terraform**:
+3. **Inizializza Terraform**:  
    ```bash
    terraform init
    ```
 
-4. **Esegui il piano di esecuzione**:
+4. **Esegui il piano di esecuzione**:  
    Questo comando genera un piano di esecuzione e mostra le risorse che verranno create/modificate.
    ```bash
    terraform plan
    ```
 
-5. **Applica il piano**:
+5. **Applica il piano**:  
    Lancio della creazione delle risorse.
    ```bash
    terraform apply
@@ -56,7 +56,9 @@ L'infrastruttura sfrutta un load balancer (ALB) per distribuire il traffico HTTP
    Per confermare la creazione è necessario digitare "yes" quando richiesto, oppure usare il flag -auto-approve al lancio del comando.
 
 6. **Output finale**:
-   Al termine dell’esecuzione, Terraform mostrerà l’endpoint del load balancer, che si può usare per accedere all'installazione di WordPress.
+   Al termine dell’esecuzione, Terraform mostrerà l’endpoint del load balancer, che si può usare per accedere all'installazione di WordPress.  
+
+   **Nota:** Potrebbe essere necessario attendere qualche minuto prima che Wordpress diventi disponibile.
 
 ## Descrizione della Soluzione
 
@@ -87,7 +89,7 @@ L'infrastruttura è configurata per minimizzare i punti di accesso e aumentare l
 Per accedere alle istanze tramite SSM, è possibile usare la console AWS o il comando AWS CLI:
 
 1. **Prerequisiti**:
-   - Nel caso si volesse utilizzare la CLI, assicurarsi di avere il **Session Manager Plugin** installato. È possibile installarlo seguendo le [istruzioni ufficiali](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html).
+   - Nel caso si volesse utilizzare la CLI, assicurarsi di avere il **Session Manager Plugin** installato. È possibile installarlo seguendo le [istruzioni](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html).
    
 2. **Accesso tramite Console AWS**:
    - Accedere alla console di **AWS EC2**.
@@ -103,7 +105,7 @@ Per accedere alle istanze tramite SSM, è possibile usare la console AWS o il co
 
 Utilizzando SSM, tutte le connessioni sono crittografate e monitorate tramite CloudWatch Logs (se abilitato), fornendo un controllo maggiore sulle attività di accesso rispetto all'uso di SSH diretto.
 
-## Migliorie Future
+## Implementazioni Future
 
 1. **Implementazione di HTTPS**: Aggiungere un certificato SSL per il bilanciatore di carico (ALB) e configurare HTTPS.
 
