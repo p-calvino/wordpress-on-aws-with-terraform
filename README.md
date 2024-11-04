@@ -26,7 +26,7 @@ L'infrastruttura sfrutta un load balancer (ALB) per distribuire il traffico HTTP
 
 ## Configurazione e Avvio
 
-1. **Clona la repository**:
+1. **Clona il repository**:
    ```bash
    git clone <URL_REPOSITORY>
    cd <NOME_CARTELLA>
