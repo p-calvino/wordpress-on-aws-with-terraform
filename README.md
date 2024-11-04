@@ -80,6 +80,8 @@ L'infrastruttura è configurata per minimizzare i punti di accesso e aumentare l
 
 - **Accesso tramite AWS Systems Manager (SSM)**: Invece di esporre la porta 22 per l'accesso SSH, l'infrastruttura utilizza SSM per gestire in modo sicuro le connessioni alle istanze. Questo approccio aumenta la sicurezza e riduce la superficie d'attacco, poiché non ci sono porte SSH aperte verso Internet.
 
+- **Password per il database generata sul momento**: La password per il database viene generata casualmente al momento del deploy e conservata in AWS Secrets Manager.
+
 #### Accesso alle istanze
 
 Per accedere alle istanze tramite SSM, è possibile usare la console AWS o il comando AWS CLI:

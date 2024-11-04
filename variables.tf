@@ -1,6 +1,6 @@
 variable "number_of_azs" {
   description = "Number of AZs to be used"
-  default     = 1
+  default     = 2
   type        = number
 }
 
