@@ -66,7 +66,7 @@ L’infrastruttura è composta da:
 
 - **VPC** con subnet pubbliche e private per isolare i livelli dell’applicazione.
 - **Application Load Balancer (ALB)** per gestire il traffico HTTP verso le istanze di WordPress.
-- **Auto Scaling Group (ASG)** per mantenere il numero desiderato di istanze.
+- **Auto Scaling Group (ASG)** per mantenere il numero desiderato di istanze in base al carico medio delle CPU.
 - **Amazon RDS (MySQL)** per il database, protetto tramite sicurezza a livello di VPC.
 - **Amazon EFS** per storage condiviso, usato per ospitare i file di WordPress.
 - **Amazon KMS** per la gestione delle chiavi di crittografia di RDS e EFS.
@@ -111,13 +111,11 @@ Utilizzando SSM, tutte le connessioni sono crittografate e monitorate tramite Cl
 
 2. **Logging e Monitoraggio**: Integrazione con Amazon CloudWatch per il monitoraggio dettagliato delle risorse e CloudTrail per il logging.
 
-3. **Scalabilità Avanzata**: Configurare policy di Auto Scaling basate su metriche come CPU o latenza per ottimizzare i costi.
+3. **Caching tramite Memcached**: Integrare un sistema di caching come **Amazon ElastiCache (Memcached)** per ridurre il carico sul database, migliorando le performance per le operazioni di lettura.
 
-4. **Caching tramite Memcached**: Integrare un sistema di caching come **Amazon ElastiCache (Memcached)** per ridurre il carico sul database, migliorando le performance per le operazioni di lettura.
+4. **Database Amazon Aurora**: Migrare a **Amazon Aurora** come soluzione di database, che offre compatibilità con MySQL e migliori prestazioni, oltre a una maggiore scalabilità rispetto a RDS MySQL.
 
-5. **Database Amazon Aurora**: Migrare a **Amazon Aurora** come soluzione di database, che offre compatibilità con MySQL e migliori prestazioni, oltre a una maggiore scalabilità rispetto a RDS MySQL.
-
-6. **Amazon WAF (Web Application Firewall)**: Implementare un WAF per proteggere l'applicazione da attacchi comuni (ad esempio SQL injection, XSS).
+5. **Amazon WAF (Web Application Firewall)**: Implementare un WAF per proteggere l'applicazione da attacchi comuni (ad esempio SQL injection, XSS).
 
 ## Ottimizzazione delle Performance
 
