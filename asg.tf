@@ -4,7 +4,7 @@ resource "aws_autoscaling_group" "wordpress_asg" {
     id      = aws_launch_template.wordpress_lt.id
     version = "$Latest"
   }
-  min_size          = 1
+  min_size          = 2
   max_size          = 4
   desired_capacity  = 2
   target_group_arns = [aws_lb_target_group.wordpress_tg.arn]

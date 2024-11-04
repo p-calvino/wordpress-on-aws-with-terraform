@@ -5,7 +5,7 @@ resource "aws_db_instance" "wordpress_db" {
   db_name                = "wordpress"
   engine                 = "mysql"
   engine_version         = "8.0"
-  instance_class         = "db.c6gd.medium"
+  instance_class         = var.db_instance_type
   username               = var.db_username
   password               = local.db_password
   parameter_group_name   = "default.mysql8.0"

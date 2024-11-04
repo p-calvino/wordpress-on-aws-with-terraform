@@ -23,8 +23,6 @@ locals {
   lt_name       = "${local.project_name}-lt"
   asg_name      = "${local.project_name}-asg"
   db_name       = "${local.project_name}-db"
-  db_protocol   = "mysql"
-  db_port       = 3306
   web_sg_name   = "${local.project_name}-web-sg"
   app_sg_name   = "${local.project_name}-app-sg"
   db_sg_name    = "${local.project_name}-db-sg"
