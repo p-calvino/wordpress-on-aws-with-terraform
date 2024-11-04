@@ -1,6 +1,6 @@
 data "aws_secretsmanager_random_password" "wordpress_db" {
-  password_length    = 25
-  exclude_characters = "/@\"\\'`"
+  password_length     = 25
+  exclude_punctuation = true
 }
 
 resource "aws_secretsmanager_secret" "wordpress_db" {

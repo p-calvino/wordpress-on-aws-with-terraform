@@ -3,6 +3,6 @@ resource "aws_eip" "nat" {
   domain = "vpc"
 
   tags = {
-    Name = "eip-wordpress-${local.availability_zones[count.index]}"
+    Name = "wordpress-eip-${local.availability_zones[count.index]}"
   }
 }

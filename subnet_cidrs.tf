@@ -2,7 +2,7 @@ module "subnets_cidrs" {
   source  = "hashicorp/subnets/cidr"
   version = "1.0.0"
 
-  base_cidr_block = local.vpc_cidr
+  base_cidr_block = var.vpc_cidr
   networks = [
     {
       name     = "public"

@@ -3,7 +3,7 @@ module "vpc" {
   version = "5.14.0"
 
   name             = local.vpc_name
-  cidr             = local.vpc_cidr
+  cidr             = var.vpc_cidr
   azs              = local.availability_zones
   public_subnets   = local.public_subnets
   private_subnets  = local.app_subnets
@@ -19,9 +19,5 @@ module "vpc" {
 
   enable_dns_hostnames = true
   enable_dns_support   = true
-
-  tags = {
-    "Environment" = local.current_environment
-  }
 }
 

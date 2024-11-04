@@ -11,9 +11,8 @@ resource "aws_autoscaling_group" "wordpress_asg" {
 
   tag {
     key                 = "Name"
-    value               = "wordpress-asg"
+    value               = local.asg_name
     propagate_at_launch = true
   }
   depends_on = [aws_db_instance.wordpress_db, aws_efs_file_system.wordpress_efs, aws_lb_target_group.wordpress_tg]
-
 }

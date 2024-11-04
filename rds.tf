@@ -5,8 +5,8 @@ resource "aws_db_instance" "wordpress_db" {
   db_name                = "wordpress"
   engine                 = "mysql"
   engine_version         = "8.0"
-  instance_class         = "db.t3.medium"
-  username               = "admin"
+  instance_class         = "db.c6gd.medium"
+  username               = var.db_username
   password               = local.db_password
   parameter_group_name   = "default.mysql8.0"
   kms_key_id             = aws_kms_key.rds_kms_key.arn
@@ -14,5 +14,9 @@ resource "aws_db_instance" "wordpress_db" {
   storage_encrypted      = true
   multi_az               = true
   skip_final_snapshot    = true
-  vpc_security_group_ids = [aws_security_group.db_security_group.id]
+  vpc_security_group_ids = [aws_security_group.db_sg.id]
+
+  tags = {
+    Name = local.db_name
+  }
 }

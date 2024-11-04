@@ -2,11 +2,11 @@ resource "aws_lb" "wordpress_alb" {
   name               = "wordpress-alb"
   internal           = false
   load_balancer_type = "application"
-  security_groups    = [aws_security_group.web_security_group.id]
+  security_groups    = [aws_security_group.web_sg.id]
   subnets            = module.vpc.public_subnets
 
   tags = {
-    Name = "wordpress-alb"
+    Name = local.alb_name
   }
 }
 
@@ -22,7 +22,7 @@ resource "aws_lb_target_group" "wordpress_tg" {
   }
 
   tags = {
-    Name = "wordpress-tg"
+    Name = local.tg_name
   }
 }
 
@@ -34,5 +34,8 @@ resource "aws_lb_listener" "wordpress_listener" {
   default_action {
     type             = "forward"
     target_group_arn = aws_lb_target_group.wordpress_tg.arn
+  }
+  tags = {
+    Name = local.listener_name
   }
 }
