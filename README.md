@@ -43,13 +43,13 @@ L'infrastruttura sfrutta un load balancer (ALB) per distribuire il traffico HTTP
    ```
 
 4. **Esegui il piano di esecuzione**:
-   Questo comando genera un piano di esecuzione e mostra le risorse che verranno create/modificate:
+   Questo comando genera un piano di esecuzione e mostra le risorse che verranno create/modificate.
    ```bash
    terraform plan
    ```
 
 5. **Applica il piano**:
-   Lancio della creazione delle risorse:
+   Lancio della creazione delle risorse.
    ```bash
    terraform apply
    ```
