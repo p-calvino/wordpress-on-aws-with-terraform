@@ -195,4 +195,4 @@ Questa soluzione è un esempio per ambiente di sviluppo e non è consigliata per
 
 | Name | Description |
 |------|-------------|
-| <a name="output_lb_endpoint"></a> [lb\_endpoint](#output\_lb\_endpoint) | n/a |
+| <a name="output_lb_endpoint"></a> [lb\_endpoint](#output\_lb\_endpoint) | Wordpress Endpoint |
