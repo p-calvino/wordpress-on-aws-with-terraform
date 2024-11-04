@@ -185,15 +185,15 @@ Questa soluzione è un esempio per ambiente di sviluppo e non è consigliata per
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| <a name="input_db_instance_type"></a> [db\_instance\_type](#input\_db\_instance\_type) | DB instance type | `string` | `"db.c6gd.medium"` | no |
-| <a name="input_db_username"></a> [db\_username](#input\_db\_username) | Database username | `string` | `"admin"` | no |
-| <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | EC2 instance type for launch template | `string` | `"m5.large"` | no |
-| <a name="input_number_of_azs"></a> [number\_of\_azs](#input\_number\_of\_azs) | Number of AZs to be used | `number` | `1` | no |
-| <a name="input_region"></a> [region](#input\_region) | AWS region for deployment | `string` | `"eu-central-1"` | no |
-| <a name="input_vpc_cidr"></a> [vpc\_cidr](#input\_vpc\_cidr) | CIDR block for the VPC | `string` | `"10.0.0.0/16"` | no |
-| <a name="input_wordpress_version"></a> [wordpress\_version](#input\_wordpress\_version) | Version of WordPress to install | `string` | `"latest"` | no |
+| Name | Description | Type | Default |
+|------|-------------|------|---------|
+| <a name="input_db_instance_type"></a> [db\_instance\_type](#input\_db\_instance\_type) | DB instance type | `string` | `"db.c6gd.medium"` |
+| <a name="input_db_username"></a> [db\_username](#input\_db\_username) | Database username | `string` | `"admin"` |
+| <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | EC2 instance type for launch template | `string` | `"m5.large"` |
+| <a name="input_number_of_azs"></a> [number\_of\_azs](#input\_number\_of\_azs) | Number of AZs to be used | `number` | `2` |
+| <a name="input_region"></a> [region](#input\_region) | AWS region for deployment | `string` | `"eu-central-1"` |
+| <a name="input_vpc_cidr"></a> [vpc\_cidr](#input\_vpc\_cidr) | CIDR block for the VPC | `string` | `"10.0.0.0/16"` |
+| <a name="input_wordpress_version"></a> [wordpress\_version](#input\_wordpress\_version) | Version of WordPress to install | `string` | `"latest"` |
 
 ## Outputs
 
